@@ -2,23 +2,24 @@ FROM ubuntu:18.04
 MAINTAINER sebastian.breuers@elfin.de
 
 RUN apt-get update && apt-get install -y \
-        git \
+        chrpath \
+        cpio \
+        curl \
         diffstat \
         texinfo \
         gawk \
-        chrpath \
-        cpio \
-        libsdl1.2-dev \
-        git-crypt \
-        locales \
+        g++-6 \
         gcc-multilib \
         gcc-6 \
-        g++-6 \
-        curl \
+        git \
+        git-crypt \
+        libsdl1.2-dev \
+        locales \
         python \
         wget \
-        && apt-get clean \
-        && locale-gen en_US.UTF-8
+        && apt-get clean
+
+RUN locale-gen en_US.UTF-8
 
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10 \
         update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 20 \
