@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
         texinfo \
         gawk \
         g++-6 \
-        gcc-multilib \
         gcc-6 \
         git \
         git-crypt \
@@ -29,6 +28,13 @@ RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10; \
         update-alternatives --set cc /usr/bin/gcc; \
         update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30; \
         update-alternatives --set c++ /usr/bin/g++
+
+RUN dpkg --add-architecture i386 && \
+        apt-get update && \
+        apt-get install -y \
+            linux-libc-dev \
+            linux-libc-dev:i386 \
+            libc6-dev-i386
 
 RUN useradd -u 1006 -s /bin/bash -U gitlab-runner -m
 RUN su gitlab-runner -c "git config --global user.email 'gitlab-runner-watson@elfin.de'" && \
