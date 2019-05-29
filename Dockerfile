@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
         locales \
         gcc-multilib \
         gcc-6 \
+        g++-6 \
         curl \
         python \
         wget \
