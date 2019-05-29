@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
         locales \
         gcc-multilib \
         curl \
+        python \
+        wget \
         && apt-get clean \
         && locale-gen en_US.UTF-8
 
