@@ -11,8 +11,14 @@ RUN apt-get update && apt-get install -y \
         libsdl1.2-dev \
         git-crypt \
         locales \
+        gcc-multilib \
+        curl \
         && apt-get clean \
         && locale-gen en_US.UTF-8
 
 RUN useradd -u 1006 -s /bin/bash -U gitlab-runner -m
+RUN su gitlab-runner -c "git config --global user.email 'gitlab-runner-watson@elfin.de'" && \
+    su gitlab-runner -c "git config --global user.name 'Gitlab Runner Watson'"
+
+
 
