@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
         git-crypt \
         locales \
         gcc-multilib \
+        gcc-6 \
         curl \
         python \
         wget \
