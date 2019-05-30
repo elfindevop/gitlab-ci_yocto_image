@@ -31,6 +31,7 @@ RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10; \
 
 RUN dpkg --add-architecture i386 && \
         apt-get update && \
+        apt-get purge -y gcc-multilib && \
         apt-get install -y \
             linux-libc-dev \
             linux-libc-dev:i386 \
