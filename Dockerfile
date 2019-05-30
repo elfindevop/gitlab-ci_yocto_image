@@ -34,7 +34,14 @@ RUN dpkg --add-architecture i386 && \
         apt-get install -y \
             linux-libc-dev \
             linux-libc-dev:i386 \
-            libc6-dev-i386
+            gcc-6-base:i386 \
+            lib32z1 \
+            lib32z1-dev \
+            libc6:i386 \
+            libc6-dev:i386 \
+            libgcc1:i386 \
+            libc6-dev-i386 \
+        && apt-get clean
 
 RUN useradd -u 1006 -s /bin/bash -U gitlab-runner -m
 RUN su gitlab-runner -c "git config --global user.email 'gitlab-runner-watson@elfin.de'" && \
