@@ -32,15 +32,16 @@ RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10; \
 RUN dpkg --add-architecture i386 && \
         apt-get update \
         && apt-get install -y --no-install-recommends \
-            linux-libc-dev \
-            linux-libc-dev:i386 \
             gcc-8-base:i386 \
             lib32z1 \
             lib32z1-dev \
             libc6:i386 \
             libc6-dev:i386 \
-            libgcc1:i386 \
             libc6-dev-i386 \
+            libgcc1:i386 \
+            libgcc-6-dev:i386 \
+            linux-libc-dev \
+            linux-libc-dev:i386 \
         && apt-get clean
 
 RUN useradd -u 1006 -s /bin/bash -U gitlab-runner -m
