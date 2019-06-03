@@ -24,6 +24,8 @@ RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10; \
         update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 20; \
         update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 10; \
         update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 20; \
+        update-alternatives --install /usr/bin/x86_64-linux-gnu-gcc x86_64-linux-gnu-gcc /usr/bin/gcc-7 10; \
+        update-alternatives --install /usr/bin/x86_64-linux-gnu-gcc x86_64-linux-gnu-gcc /usr/bin/gcc-6 20; \
         update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30; \
         update-alternatives --set cc /usr/bin/gcc; \
         update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30; \
