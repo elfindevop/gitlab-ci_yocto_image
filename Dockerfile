@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
         gawk \
         g++-6 \
         gcc-6 \
+        gcc-6-multilib \
         git \
         git-crypt \
         libsdl1.2-dev \
