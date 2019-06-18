@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
         locales \
         python \
         wget \
+        rsync \
         && apt-get clean
 
 RUN locale-gen en_US.UTF-8
