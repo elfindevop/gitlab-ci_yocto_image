@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y \
         python \
         wget \
         rsync \
+        librsvg2-2 \
+        librsvg2-common \
         && apt-get clean
 
 RUN locale-gen en_US.UTF-8
