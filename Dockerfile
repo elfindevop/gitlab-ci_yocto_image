@@ -60,7 +60,7 @@ RUN dpkg --add-architecture i386 && \
             libgcc-6-dev:i386 \
             linux-libc-dev \
             linux-libc-dev:i386 \
-        && apt-get clean
+        && apt-get clean \
         && ldconfig
 
 RUN useradd -u 1006 -s /bin/bash -U gitlab-runner -m
