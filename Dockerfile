@@ -38,6 +38,18 @@ RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 10; \
 RUN dpkg --add-architecture i386 && \
         apt-get update \
         && apt-get install -y --no-install-recommends \
+            cmake \
+            libssl-dev \
+            libboost-system1.65-dev \
+            liblzo2-dev:i386 \
+            liblzo2-dev:amd64 \
+            uuid-dev:i386 \
+            uuid-dev:amd64 \
+            libusb-1.0-0-dev:i386 \
+            libusb-1.0-0-dev:amd64 \
+            libusb-1.0-0:i386 \
+            libusb-1.0-0:amd64 \
+            libc6-dev-i386 \
             gcc-8-base:i386 \
             lib32z1 \
             lib32z1-dev \
@@ -49,6 +61,7 @@ RUN dpkg --add-architecture i386 && \
             linux-libc-dev \
             linux-libc-dev:i386 \
         && apt-get clean
+        && ldconfig
 
 RUN useradd -u 1006 -s /bin/bash -U gitlab-runner -m
 RUN su gitlab-runner -c "git config --global user.email 'gitlab-runner-watson@elfin.de'" && \
