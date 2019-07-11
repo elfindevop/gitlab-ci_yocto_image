@@ -67,5 +67,8 @@ RUN useradd -u 1006 -s /bin/bash -U gitlab-runner -m
 RUN su gitlab-runner -c "git config --global user.email 'gitlab-runner-watson@elfin.de'" && \
     su gitlab-runner -c "git config --global user.name 'Gitlab Runner Watson'"
 
+RUN mkdir /workspace
+RUN chmod 777 /workspace
+WORKDIR /workspace
 
 
